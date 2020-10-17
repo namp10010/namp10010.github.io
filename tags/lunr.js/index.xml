@@ -5,7 +5,11 @@
     <link>https://namp10010.github.io/tags/lunr.js/</link>
     <description>Recent content in lunr.js on namp10010</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 05 Jul 2018 20:30:00 +0600</lastBuildDate><atom:link href="https://namp10010.github.io/tags/lunr.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Jul 2018 20:30:00 +0600</lastBuildDate>
+    
+	<atom:link href="https://namp10010.github.io/tags/lunr.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Search: Lunr.js</title>
       <link>https://namp10010.github.io/docs/search-lunr-js/</link>

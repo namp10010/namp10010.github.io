@@ -5,17 +5,10 @@
     <link>https://namp10010.github.io/authors/muniftanjim/</link>
     <description>Recent content in muniftanjim on namp10010</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Aug 2018 12:30:00 +0600</lastBuildDate><atom:link href="https://namp10010.github.io/authors/muniftanjim/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Typography</title>
-      <link>https://namp10010.github.io/typography/</link>
-      <pubDate>Thu, 28 Sep 2017 08:00:00 +0600</pubDate>
-      
-      <guid>https://namp10010.github.io/typography/</guid>
-      <description>Here is a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Heading 2 Another one. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Heading 4  First item Second item   Nested unordered item  Third item Nested ordered item 1 Nested ordered item 2  Heading 5 Where are the quotes!</description>
-    </item>
+    <lastBuildDate>Sun, 12 Aug 2018 12:30:00 +0600</lastBuildDate>
+    
+	<atom:link href="https://namp10010.github.io/authors/muniftanjim/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>KaTeX Support</title>
@@ -145,7 +138,7 @@ Widget: About  about [Map]:  title [String]: Title</description>
  Shortcode: center Center align you content.
 center: Parameters  Markdown content between opening and closing tags.  center: Usage Example {{&amp;lt; center &amp;gt;}} _Center Aligned Text_ {{&amp;lt; /center &amp;gt;}} Output:
 Center Aligned Text   Shortcode: convo Renders conversation blocks.
-convo: Parameters  sep [String] (optional): seperator between person and text (default: &amp;ldquo;:&amp;quot;)  convo: Inner Syntax person :: text You can remove the person part, if you want.</description>
+convo: Parameters  sep [String] (optional): seperator between person and text (default: &amp;ldquo;:&amp;rdquo;)  convo: Inner Syntax person :: text You can remove the person part, if you want.</description>
     </item>
     
     <item>
@@ -204,7 +197,7 @@ Social Menu is available as Widget: sidebar_menu. Add it to the sidebar Widget A
       <pubDate>Tue, 26 Sep 2017 08:00:00 +0600</pubDate>
       
       <guid>https://namp10010.github.io/docs/opengraph/</guid>
-      <description>Minimo has built-in support for Opengraph tags. It will pick up most of the things from your contents&#39; front-matters &amp;amp; Hugo configuration.
+      <description>Minimo has built-in support for Opengraph tags. It will pick up most of the things from your contents&amp;rsquo; front-matters &amp;amp; Hugo configuration.
 You can use these options in you content&amp;rsquo;s front-matter:
 --- audios: [] # for og:audio tags images: [] # for og:image tags videos: [] # for og:video tags ---  audios [Array of Strings]: path/url of audio files images [Array of Strings]: path/url of image files videos [Array of Strings]: path/url of video files  N.</description>
     </item>

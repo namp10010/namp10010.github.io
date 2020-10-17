@@ -5,7 +5,11 @@
     <link>https://namp10010.github.io/tags/search/</link>
     <description>Recent content in search on namp10010</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 06 Jul 2018 01:00:00 +0600</lastBuildDate><atom:link href="https://namp10010.github.io/tags/search/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jul 2018 01:00:00 +0600</lastBuildDate>
+    
+	<atom:link href="https://namp10010.github.io/tags/search/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Search: Fuse.js</title>
       <link>https://namp10010.github.io/docs/search-fuse-js/</link>

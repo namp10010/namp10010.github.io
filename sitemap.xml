@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://namp10010.github.io/typography/</loc>
-    <lastmod>2017-09-28T08:00:00+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://namp10010.github.io/about/</loc>
   </url>
   
@@ -147,11 +142,6 @@
   </url>
   
   <url>
-    <loc>https://namp10010.github.io/page/</loc>
-    <lastmod>2017-09-28T08:00:00+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://namp10010.github.io/tags/i18n/</loc>
     <lastmod>2017-09-27T14:00:00+06:00</lastmod>
   </url>
@@ -234,6 +224,10 @@
   <url>
     <loc>https://namp10010.github.io/docs/installation/</loc>
     <lastmod>2018-02-08T15:00:00+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://namp10010.github.io/page/</loc>
   </url>
   
   <url>

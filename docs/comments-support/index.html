@@ -17,7 +17,7 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
 <meta property='og:site_name' content='namp10010'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/058944a54775b387da964cb3cc3670ff?s=256'><meta property='article:author' content='https://facebook.com/MunifTanjim'><meta property='article:section' content='docs'><meta property='article:tag' content='config'><meta property='article:published_time' content='2018-03-29T09:00:00&#43;06:00'/><meta property='article:modified_time' content='2020-08-10T22:00:00&#43;06:00'/><meta name='twitter:card' content='summary'><meta name='twitter:creator' content='@MunifTanjim'>
 
-<meta name="generator" content="Hugo 0.76.5" />
+<meta name="generator" content="Hugo 0.74.3" />
 
   <title>Comments Support • Munif Tanjim</title>
   <link rel='canonical' href='https://namp10010.github.io/docs/comments-support/'>
@@ -56,31 +56,12 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
   </header>
 
 </section>
-<section class='widget widget-search sep-after'>
-  <header>
-    <h4 class='title widget-title'>Search</h4>
-  </header>
-
-  <form action='/search' id='search-form' class='search-form'>
-    <label>
-      <span class='screen-reader-text'>Search</span>
-      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
-    </label></form>
-
-</section>
 <section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
     <div class='container'>
       <ul><li class='item'>
-  <a href='/'>Home</a></li><li class='item has-children'>
-  <a href='/docs/'>Docs</a><button class='sub-menu-toggler'>
-    <span class='screen-reader-text'>expand sub menu</span>
-    <span class='sign'></span>
-  </button>
-
-  <ul class='sub-menu'><li class='item'>
-  <a href='/docs/menus/'>Menus</a></li><li class='item'>
-  <a href='/docs/widgets/'>Widgets</a></li></ul></li><li class='item'>
-  <a href='/docs/sidebar/'>Sidebar</a></li></ul>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/docs/'>Blog</a></li><li class='item'>
+  <a href='/about/'>About</a></li></ul>
     </div>
   </nav>
 
@@ -125,6 +106,18 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
 
 
 </section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
 </div>
 
   <div class='sidebar-overlay'></div>
@@ -155,13 +148,9 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
     <ul><li class='item'>
         <a href='/'>Home</a>
       </li><li class='item'>
-        <a href='/docs/'>Docs</a>
-      </li><li class='item'>
-        <a href='/typography/'>Typography</a>
+        <a href='/docs/'>Blog</a>
       </li><li class='item'>
         <a href='/about/'>About</a>
-      </li><li class='item'>
-        <a href='https://namp10010.github.io'>Repo</a>
       </li></ul>
   </div>
 </nav><div class='header-widgets'>
@@ -170,7 +159,7 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-      <ol><li><a href='/'>Home</a></li><li><a href='/docs/'>Docs</a></li><li><span>Comments Support</span></li></ol>
+      <ol><li><a href='/'>Home</a></li><li><a href='/docs/'>Blog</a></li><li><span>Comments Support</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -277,7 +266,7 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
 <h3 id="for-specific-posts">For Specific Posts</h3>
 <p>The global <code>.Site.Params.comments.enable</code> setting can be overridden for specific posts in their content&rsquo;s frontmatter with this option:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-<span style="color:#f92672">comments</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#66d9ef">comments</span>: <span style="color:#66d9ef">true</span>
 ---
 
 </code></pre></div><ul>
@@ -332,27 +321,27 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
 <h4 id="staticman-configuration-file">Staticman Configuration File</h4>
 <p>Next, you&rsquo;ll need a Staticman Configuration File (<code>staticman.yml</code>) in the root of your site&rsquo;s repository. Here&rsquo;s a sample of it:</p>
 <p><strong><code>staticman.yml</code></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">comments</span>:
-  <span style="color:#f92672">allowedFields</span>: [<span style="color:#e6db74">&#39;author&#39;</span>, <span style="color:#e6db74">&#39;content&#39;</span>, <span style="color:#e6db74">&#39;email&#39;</span>, <span style="color:#e6db74">&#39;parent_id&#39;</span>, <span style="color:#e6db74">&#39;permalink&#39;</span>, <span style="color:#e6db74">&#39;site&#39;</span>]
-  <span style="color:#f92672">branch</span>: <span style="color:#e6db74">&#39;master&#39;</span>
-  <span style="color:#f92672">commitMessage</span>: <span style="color:#e6db74">&#34;add [comment]: by {fields.author} &lt;Staticman&gt;\n\n{fields.permalink}#comment-{@id}&#34;</span>
-  <span style="color:#f92672">filename</span>: <span style="color:#e6db74">&#39;{@id}&#39;</span>
-  <span style="color:#f92672">format</span>: <span style="color:#e6db74">&#39;yaml&#39;</span>
-  <span style="color:#f92672">generatedFields</span>:
-    <span style="color:#f92672">date</span>:
-      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">date</span>
-      <span style="color:#f92672">options</span>:
-        <span style="color:#f92672">format</span>: <span style="color:#e6db74">&#39;timestamp&#39;</span>
-  <span style="color:#f92672">moderation</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#39;Minimo&#39;</span>
-  <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#39;data/comments/{options.postId}&#39;</span>
-  <span style="color:#f92672">requiredFields</span>: [<span style="color:#e6db74">&#39;author&#39;</span>, <span style="color:#e6db74">&#39;content&#39;</span>, <span style="color:#e6db74">&#39;email&#39;</span>, <span style="color:#e6db74">&#39;permalink&#39;</span>]
-  <span style="color:#f92672">reCaptcha</span>:
-    <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">comments</span>:
+  <span style="color:#66d9ef">allowedFields</span>: [<span style="color:#e6db74">&#39;author&#39;</span>, <span style="color:#e6db74">&#39;content&#39;</span>, <span style="color:#e6db74">&#39;email&#39;</span>, <span style="color:#e6db74">&#39;parent_id&#39;</span>, <span style="color:#e6db74">&#39;permalink&#39;</span>, <span style="color:#e6db74">&#39;site&#39;</span>]
+  <span style="color:#66d9ef">branch</span>: <span style="color:#e6db74">&#39;master&#39;</span>
+  <span style="color:#66d9ef">commitMessage</span>: <span style="color:#e6db74">&#34;add [comment]: by {fields.author} &lt;Staticman&gt;\n\n{fields.permalink}#comment-{@id}&#34;</span>
+  <span style="color:#66d9ef">filename</span>: <span style="color:#e6db74">&#39;{@id}&#39;</span>
+  <span style="color:#66d9ef">format</span>: <span style="color:#e6db74">&#39;yaml&#39;</span>
+  <span style="color:#66d9ef">generatedFields</span>:
+    <span style="color:#66d9ef">date</span>:
+      <span style="color:#66d9ef">type</span>: date
+      <span style="color:#66d9ef">options</span>:
+        <span style="color:#66d9ef">format</span>: <span style="color:#e6db74">&#39;timestamp&#39;</span>
+  <span style="color:#66d9ef">moderation</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;Minimo&#39;</span>
+  <span style="color:#66d9ef">path</span>: <span style="color:#e6db74">&#39;data/comments/{options.postId}&#39;</span>
+  <span style="color:#66d9ef">requiredFields</span>: [<span style="color:#e6db74">&#39;author&#39;</span>, <span style="color:#e6db74">&#39;content&#39;</span>, <span style="color:#e6db74">&#39;email&#39;</span>, <span style="color:#e6db74">&#39;permalink&#39;</span>]
+  <span style="color:#66d9ef">reCaptcha</span>:
+    <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">false</span>
     <span style="color:#75715e"># siteKey: &#39;&#39;</span>
     <span style="color:#75715e"># secret: &#39;&#39;</span>
-  <span style="color:#f92672">transforms</span>:
-    <span style="color:#f92672">email</span>: <span style="color:#ae81ff">md5</span>
+  <span style="color:#66d9ef">transforms</span>:
+    <span style="color:#66d9ef">email</span>: md5
 
 </code></pre></div>
 <h5 id="notes">Notes</h5>
@@ -460,110 +449,21 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
 </nav>
 
 
-<section id='comments' class='comments'>
-  <div class='container sep-before'>
-    <div class='comments-area'><div id='submission-success' class='comment-submission-feedback'>
-  <h4>Thank You!</h4>
-  <span>Your comment has been submitted. It will appear on this page shortly!</span>
-  <a href='#comments' class='button'>OK</a>
-</div>
 
-<div id='submission-failure' class='comment-submission-feedback'>
-  <h4>Yikes, Sorry!</h4>
-  <span>Error occured. Couldn&#39;t submit your comment. Please try again. Thank You!</span>
-  <a href='#comments' class='button'>OK</a>
-</div>
-
-
-<h3 class='comments-title'>
-  2 comments on Comments Support
-</h3>
-
-<ol class='comment-list'><li id='comment-85b5b000-33c9-11e8-b7f2-af13eee21e7d' class='comment'>
-  <article class='comment-body'>
-    <header class='comment-header'>
-      <div class='comment-author'>
-        <img alt='Munif Tanjim&#39;s avatar' src='https://www.gravatar.com/avatar/058944a54775b387da964cb3cc3670ff?s=64' class='avatar'/>
-        <b class='fn'><a href='https://muniftanjim.com' rel='external nofollow' class='url'>Munif Tanjim</a></b>
-        <span class='says'>says: </span>
-      </div>
-      <div class='comment-meta'>
-        <a href='#comment-85b5b000-33c9-11e8-b7f2-af13eee21e7d'><time datetime='2018-03-30T08:00:00&#43;11:00'>08:00, Mar 30, 2018</time>
-        </a>
-      </div>
-    </header>
-    <div class='comment-content'>
-      Comment&rsquo;s on Minimo is now powered by <strong>Staticman</strong>&rsquo;s superpower!
-    </div>
-    <footer class='reply'><a rel='nofollow' class='button comment-reply-link' href='#respond' onclick='return moveRespondBlock(&#34;85b5b000-33c9-11e8-b7f2-af13eee21e7d&#34;)' aria-label='Reply to Munif Tanjim'>
-        Reply
-      </a></footer>
-  </article><ol class='children'><li id='comment-c7062840-33ca-11e8-b7f2-af13eee21e7d' class='comment'>
-  <article class='comment-body'>
-    <header class='comment-header'>
-      <div class='comment-author'>
-        <img alt='Munif Tanjim&#39;s avatar' src='https://www.gravatar.com/avatar/058944a54775b387da964cb3cc3670ff?s=64' class='avatar'/>
-        <b class='fn'>Munif Tanjim</b>
-        <span class='says'>says: </span>
-      </div>
-      <div class='comment-meta'>
-        <a href='#comment-c7062840-33ca-11e8-b7f2-af13eee21e7d'><time datetime='2018-03-30T08:30:00&#43;11:00'>08:30, Mar 30, 2018</time>
-        </a>
-      </div>
-    </header>
-    <div class='comment-content'>
-      <em>&ldquo;I suppose everyone feels that he&rsquo;s the hero in his own story, but there are no heroes, no villains, just people doing the best they can.&quot;</em><br>
-&mdash; Harold Finch
-    </div>
-    <footer class='reply'></footer>
-  </article></li>
-</ol>
-</li>
-</ol>
-
-<div id='respond' class='comment-respond'>
-  <h4 class='comment-reply-title'>Leave a comment<small>
-      <a rel='nofollow' id='cancel-comment-reply-link' href='#respond' class='button' style='display:none' aria-label='Cancel comment'>Cancel</a>
-    </small>
-  </h4>
-  <form action='https://api.staticman.net/v2/entry/MunifTanjim/minimo/master/comments' method='post' id='comment-form' class='comment-form'>
-    <input type='hidden' name='options[postId]' value='33deba780bf80cacf2627abf7a22fec7'>
-    <input type='hidden' name='options[redirect]' value='https://namp10010.github.io/docs/comments-support/#submission-success'>
-    <input type='hidden' name='options[redirectError]' value='https://namp10010.github.io/docs/comments-support/#submission-failure'>
-
-    <input type='address' name='fields[honeypot]' style='display:none'>
-    <input type='hidden' name='fields[permalink]' value='/docs/comments-support/'>
-    <input type='hidden' name='fields[parent_id]' value=''><div>
-      <label for='comment'>Comment*</label>
-      <textarea id='comment' name='fields[content]' required rows='3'></textarea>
-    </div>
-    <div>
-      <label for='name'>Name*</label>
-      <input id='name' name='fields[author]' type='text' required>
-    </div>
-    <div>
-      <label for='email'>Email*</label>
-      <input id='email' name='fields[email]' type='email' required>
-    </div>
-    <div>
-      <label for='url'>Website</label>
-      <input id='url' name='fields[site]' type='url'>
-    </div><div>
-      <button type='submit' id="submitComment">Comment!</button>
-    </div>
-  </form>
-</div>
-
-</div>
-  </div>
-</section>
 
       </main>
 
       <footer id='footer' class='footer'>
         <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
     <ul><li>
-        <a href='https://github.com/MunifTanjim' target='_blank' rel='noopener me'>
+        <a href='https://linkedin.com/in/namp10010' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+      </li><li>
+        <a href='https://github.com/namp10010' target='_blank' rel='noopener me'>
           <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
     
     
@@ -572,80 +472,10 @@ Enable/Disable Comments Globally For enabling or disabling comments globally, ch
 </svg>
 </a>
       </li><li>
-        <a href='https://facebook.com/MunifTanjim' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Facebook account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-</svg>
-</a>
-      </li><li>
-        <a href='https://twitter.com/MunifTanjim' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-  <title>Twitter icon</title>
-  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-
-</svg>
-</a>
-      </li><li>
-        <a href='https://instagram.com/MunifTanjim' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Instagram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-</svg>
-</a>
-      </li><li>
-        <a href='mailto:contact@example.com' target='_blank' rel='noopener me'>
+        <a href='mailto:namp10010@google.com' target='_blank' rel='noopener me'>
           <span class='screen-reader-text'>Contact via Email</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
     
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-</a>
-      </li><li>
-        <a href='https://codepen.io/MunifTanjim' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Codepen account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15.5"></line><polyline points="22 8.5 12 15.5 2 8.5"></polyline><polyline points="2 15.5 12 8.5 22 15.5"></polyline><line x1="12" y1="2" x2="12" y2="8.5"></line>
-</svg>
-</a>
-      </li><li>
-        <a href='https://gitlab.com/MunifTanjim' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Gitlab account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <title>GitLab icon</title>  <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"/>
-</svg>
-</a>
-      </li><li>
-        <a href='https://linkedin.com/in/muniftanjim' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
-</svg>
-</a>
-      </li><li>
-        <a href='https://t.me/MunifTanjim' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Telegram account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <title>Telegram icon</title><path d="M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z"/>
-</svg>
-</a>
-      </li><li>
-        <a href='https://scholar.google.com/citations?user=qc6CJjYAAAAJ' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Google_scholar account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <title>Google Scholar icon</title><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
-</svg>
-</a>
-      </li><li>
-        <a href='https://www.youtube.com/channel/UCT-U0rNerYxItGcuoPX-WYA' target='_blank' rel='noopener me'>
-          <span class='screen-reader-text'>Open Youtube account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    
-    <title>YouTube icon</title>
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-
 </svg>
 </a>
       </li></ul>
