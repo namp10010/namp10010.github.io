@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='I just noticed that I got the beta access to Codespaces and decided to try it out. I am writing this post using VS Code from Codespaces. My intension is to see if I can develop and test the flow for gohugo static web creation. First impression, the loading time wasn&rsquo;t too bad. However, once loaded it didn&rsquo;t even feel like I am coding on a remote IDE.
+To my surprise, Codespace - which is a linux with GUI - comes loaded with a bunc of development tools including my new toy hugo.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Github Codespaces impression and hugo  • Nam Pham'>
+<meta property='og:description' content='I just noticed that I got the beta access to Codespaces and decided to try it out. I am writing this post using VS Code from Codespaces. My intension is to see if I can develop and test the flow for gohugo static web creation. First impression, the loading time wasn&rsquo;t too bad. However, once loaded it didn&rsquo;t even feel like I am coding on a remote IDE.
+To my surprise, Codespace - which is a linux with GUI - comes loaded with a bunc of development tools including my new toy hugo.'>
+<meta property='og:url' content='https://namp10010.github.io/docs/github-codespaces-impression/'>
+<meta property='og:site_name' content='namp10010'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/bcb8bc37463560f73b81b4485e0fb0c6?s=256'><meta property='article:section' content='docs'><meta property='article:tag' content='github codespaces'><meta property='article:tag' content='hugo'><meta property='article:published_time' content='2020-10-18T22:00:00&#43;11:00'/><meta property='article:modified_time' content='2020-10-18T22:00:00&#43;11:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.74.3" />
+
+  <title>Github Codespaces impression and hugo  • Nam Pham</title>
+  <link rel='canonical' href='https://namp10010.github.io/docs/github-codespaces-impression/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-docs has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      namp10010
+      </a>
+    </h2>
+    <div class='desc'>
+    random thoughts
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/docs/'>Blog</a></li><li class='item'>
+  <a href='/about/'>About</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/github-action/' style='font-size:1em'>github-action</a>
+      </li><li>
+        <a href='/tags/github-codespaces/' style='font-size:1em'>github codespaces</a>
+      </li><li>
+        <a href='/tags/hugo/' style='font-size:2em'>hugo</a>
+      </li></ul>
+</div>
+
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+
+</svg>
+</span>
+  <span class='close'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/docs/'>Blog</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Home</a></li><li><a href='/docs/'>Blog</a></li><li><span>Github Codespaces impression and hugo </span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>namp10010</p><p class='desc site-desc'>random thoughts</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Github Codespaces impression and hugo </h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-10-18T22:00:00&#43;11:00'>2020, Oct 18</time>
+</span>
+
+  <span class='byline'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
+  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
+
+</svg>
+<span class='screen-reader-text'> by </span><a href='/authors/namp10010'>Nam Pham</a></span>
+  
+<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+
+</svg>
+3 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p>I just noticed that I got the beta access to Codespaces and decided to try it out. I am writing this post using VS Code from Codespaces. My intension is to see if I can develop and test the flow for <a href="https://gohugo.io/">gohugo</a> static web creation. First impression, the loading time wasn&rsquo;t too bad. However, once loaded it didn&rsquo;t even feel like I am coding on a remote IDE.</p>
+<p>To my surprise, Codespace - which is a linux with GUI - comes loaded with a bunc of development tools including my new toy <code>hugo</code>. I later found that it&rsquo;s possible to <a href="https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/configuring-codespaces-for-your-project">configure the image to suit your need</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go version
+go version go1.15.1 linux/amd64
+
+$ java -version
+openjdk version <span style="color:#e6db74">&#34;11.0.8&#34;</span> 2020-07-14
+OpenJDK Runtime Environment AdoptOpenJDK <span style="color:#f92672">(</span>build 11.0.8+10<span style="color:#f92672">)</span>
+OpenJDK 64-Bit Server VM AdoptOpenJDK <span style="color:#f92672">(</span>build 11.0.8+10, mixed mode<span style="color:#f92672">)</span>
+
+$ kubectl version
+Client Version: version.Info<span style="color:#f92672">{</span>Major:<span style="color:#e6db74">&#34;1&#34;</span>, Minor:<span style="color:#e6db74">&#34;19&#34;</span>, GitVersion:<span style="color:#e6db74">&#34;v1.19.0&#34;</span>, GitCommit:<span style="color:#e6db74">&#34;e19964183377d0ec2052d1f1fa930c4d7575bd50&#34;</span>, GitTreeState:<span style="color:#e6db74">&#34;clean&#34;</span>, BuildDate:<span style="color:#e6db74">&#34;2020-08-26T14:30:33Z&#34;</span>, GoVersion:<span style="color:#e6db74">&#34;go1.15&#34;</span>, Compiler:<span style="color:#e6db74">&#34;gc&#34;</span>, Platform:<span style="color:#e6db74">&#34;linux/amd64&#34;</span><span style="color:#f92672">}</span>
+</code></pre></div><p>What&rsquo;s more interesting is that I could seemlessly install a newer version of <code>hugo</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget https://github.com/gohugoio/hugo/releases/download/v0.76.5/hugo_0.76.5_Linux-64bit.deb
+
+--omitted output--
+
+hugo_0.76.5_Linux-64bit.deb.1     100%<span style="color:#f92672">[========================</span>&gt;<span style="color:#f92672">]</span>  13.30M  5.18MB/s    in 2.6s
+
+2020-10-18 12:05:55 <span style="color:#f92672">(</span>5.18 MB/s<span style="color:#f92672">)</span> - ‘hugo_0.76.5_Linux-64bit.deb.1’ saved <span style="color:#f92672">[</span>13945876/13945876<span style="color:#f92672">]</span>
+
+$ sudo dpkg -i hugo_0.76.5_Linux-64bit.deb 
+<span style="color:#f92672">(</span>Reading database ... <span style="color:#ae81ff">88062</span> files and directories currently installed.<span style="color:#f92672">)</span>
+Preparing to unpack hugo_0.76.5_Linux-64bit.deb ...
+Unpacking hugo <span style="color:#f92672">(</span>0.76.5<span style="color:#f92672">)</span> over <span style="color:#f92672">(</span>0.76.5<span style="color:#f92672">)</span> ...
+Setting up hugo <span style="color:#f92672">(</span>0.76.5<span style="color:#f92672">)</span> ...
+
+$ hugo version
+Hugo Static Site Generator v0.76.5-60F0725B linux/amd64 BuildDate: 2020-10-14T15:15:49Z
+</code></pre></div><p>Now that I have the latest version of <code>hugo</code>, I should be able to test this post.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server
+Start building sites … 
+
+                   | EN  
+-------------------+-----
+  Pages            | <span style="color:#ae81ff">37</span>  
+  Paginator pages  |  <span style="color:#ae81ff">0</span>  
+  Non-page files   |  <span style="color:#ae81ff">0</span>  
+  Static files     | <span style="color:#ae81ff">21</span>  
+  Processed images |  <span style="color:#ae81ff">0</span>  
+  Aliases          | <span style="color:#ae81ff">10</span>  
+  Sitemaps         |  <span style="color:#ae81ff">1</span>  
+  Cleaned          |  <span style="color:#ae81ff">0</span>  
+
+Built in <span style="color:#ae81ff">146</span> ms
+Watching <span style="color:#66d9ef">for</span> changes in /home/codespace/workspace/blog/<span style="color:#f92672">{</span>archetypes,content,data,static,themes<span style="color:#f92672">}</span>
+Watching <span style="color:#66d9ef">for</span> config changes in /home/codespace/workspace/blog/config.toml
+Environment: <span style="color:#e6db74">&#34;development&#34;</span>
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ <span style="color:#f92672">(</span>bind address 127.0.0.1<span style="color:#f92672">)</span>
+Press Ctrl+C to stop
+</code></pre></div><p>It looked fine but there is no browser installed except for <code>lynx</code>. Here is what <code>lynx</code> looked like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#                                                                                                                                                                                  namp10010 (p1 of 3)
+   #namp10010
+
+   Skip to Main Menu
+
+   [logo.png]
+
+</code></pre></div><p>I installed <code>chromium</code> but couldn&rsquo;t launch it. To my rescue, I found an VS Code extension <strong>Browser Preview</strong> that could open <code>localhost:1313</code> and show the page. I still don&rsquo;t know how to take screenshot though.</p>
+<p>A problem at last, I couldn&rsquo;t push the change to remote. It seemed that there was some network issue between the container and github.</p>
+<p>On downside at the moment is I believe all settings will be gone once a codespace is disconnected as stated in <a href="https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/about-codespaces">Codespaces introduction</a></p>
+<blockquote>
+<p>A codespace is not fully resumable. Processes that were running at the time the codespace was stopped will not be restarted</p>
+</blockquote>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='categories'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+    <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+
+</svg>
+<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/tech/'>tech</a></div>
+<div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/github-codespaces/'>github codespaces</a>, <a class='tag' href='/tags/hugo/'>hugo</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/docs/hugo-github-action/'>
+        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>How to auto deploy Hugo contents with Github action</a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://linkedin.com/in/namp10010' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+      </li><li>
+        <a href='https://github.com/namp10010' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:githubio&#43;namp10010@gmail.com' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2020 namp10010 </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+
