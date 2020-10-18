@@ -5,10 +5,22 @@
     <link>https://namp10010.github.io/docs/</link>
     <description>Recent content in Blog on namp10010</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Aug 2018 12:30:00 +0600</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2020 10:00:00 +1100</lastBuildDate>
     
 	<atom:link href="https://namp10010.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to auto deploy Hugo contents with Github action</title>
+      <link>https://namp10010.github.io/docs/hugo-github-action/</link>
+      <pubDate>Sun, 18 Oct 2020 10:00:00 +1100</pubDate>
+      
+      <guid>https://namp10010.github.io/docs/hugo-github-action/</guid>
+      <description>In this quick tutorial, we will automate the deployment of Hugo generated static web contents to a github page using github action.
+Prerequisites   A main repo blog which is a Hugo web repo. This is where the github action will be set up
+  Generated static contents in public/ which is a git submodule which points to a github user page
+git submodule add https://github.com/namp10010/namp10010.github.io.git public   Optional a theme minimo is installed under themes/minimo.</description>
+    </item>
     
     <item>
       <title>KaTeX Support</title>
