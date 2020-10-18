@@ -5,14 +5,14 @@
 <meta name='description' content='In this quick tutorial, we will automate the deployment of Hugo generated static web contents to a github page using github action.
 Prerequisites   A main repo blog which is a Hugo web repo. This is where the github action will be set up
   Generated static contents in public/ which is a git submodule which points to a github user page
-git submodule add https://github.com/namp10010/namp10010.github.io.git public   Optional a theme minimo is installed under themes/minimo.'>
+git submodule add https://github.com/namp10010/namp10010.github.io.git public Follow Setup github user page to create your own user page.'>
 <meta name='theme-color' content='#ffcd00'>
 
 <meta property='og:title' content='How to auto deploy Hugo contents with Github action • Nam Pham'>
 <meta property='og:description' content='In this quick tutorial, we will automate the deployment of Hugo generated static web contents to a github page using github action.
 Prerequisites   A main repo blog which is a Hugo web repo. This is where the github action will be set up
   Generated static contents in public/ which is a git submodule which points to a github user page
-git submodule add https://github.com/namp10010/namp10010.github.io.git public   Optional a theme minimo is installed under themes/minimo.'>
+git submodule add https://github.com/namp10010/namp10010.github.io.git public Follow Setup github user page to create your own user page.'>
 <meta property='og:url' content='https://namp10010.github.io/docs/hugo-github-action/'>
 <meta property='og:site_name' content='namp10010'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://namp10010.github.io/images/hugo-github-action.png'><meta property='article:section' content='docs'><meta property='article:tag' content='github-action'><meta property='article:tag' content='hugo'><meta property='article:published_time' content='2020-10-18T10:00:00&#43;11:00'/><meta property='article:modified_time' content='2020-10-18T10:00:00&#43;11:00'/><meta name='twitter:card' content='summary_large_image'><meta property='twitter:image' content='https://namp10010.github.io/images/hugo-github-action.png'>
@@ -244,7 +244,8 @@ git submodule add https://github.com/namp10010/namp10010.github.io.git public   
 <li>
 <p>Generated static contents in <code>public/</code> which is a <code>git submodule</code> which points to a github user page</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add https://github.com/namp10010/namp10010.github.io.git public
-</code></pre></div></li>
+</code></pre></div><p>Follow <a href="https://pages.github.com">Setup github user page</a> to create your own user page.</p>
+</li>
 <li>
 <p><strong>Optional</strong> a theme <code>minimo</code> is installed under <code>themes/minimo</code>. (Please note I installed <code>minimo</code> <a href="https://minimo.netlify.app/docs/installation/">as a clone</a>)</p>
 </li>
@@ -338,15 +339,15 @@ git push origin main
 <p><img src="/images/hugo-github-action-token.png" alt="token&rsquo;s scope"></p>
 <p>Add the token to the repo&rsquo;s secrets with the name <code>API_TOKEN_GITHUB</code> by following <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets">adding secrets to your github repo</a>.</p>
 <p>Now, let make a change to your web content in repo <code>blog</code> and push it up to <code>main</code>.</p>
+<p><img src="/images/hugo-github-action-run.png" alt="token&rsquo;s scope"></p>
 <h3 id="references">References</h3>
 <ul>
-<li><a href="">Hugo installation</a></li>
-<li><a href="">Minimo installation</a></li>
+<li><a href="https://gohugo.io/getting-started/quick-start/">Hugo Quick Start</a></li>
+<li><a href="https://minimo.netlify.app/docs/installation/">Minimo Installation</a></li>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host hugo on github</a></li>
-<li><a href="">Setup github page</a></li>
+<li><a href="https://pages.github.com">Setup github user page</a></li>
 <li><a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token">Create github access token</a></li>
-<li><a href="">Create github action</a></li>
-<li><a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets">adding secrets to your github repo</a></li>
+<li><a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets">Add secrets to github repo</a></li>
 </ul>
 
 </div>
