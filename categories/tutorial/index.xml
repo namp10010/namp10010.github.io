@@ -22,29 +22,5 @@ Prerequisites   A main repo blog which is a Hugo web repo. This is where the git
 git submodule add https://github.com/namp10010/namp10010.github.io.git public Follow Setup github user page to create your own user page.</description>
     </item>
     
-    <item>
-      <title>Updating Guide</title>
-      <link>https://namp10010.github.io/docs/updating/</link>
-      <pubDate>Mon, 25 Sep 2017 06:00:00 +0600</pubDate>
-      
-      <guid>https://namp10010.github.io/docs/updating/</guid>
-      <description>Updating Minimo Update Minimo clone Just replace the themes/minimo folder with the latest version of Minimo clone, i.e. delete the old folder and clone again:
-rm -rf themes/minimo git clone --depth 1 https://github.com/MunifTanjim/minimo themes/minimo Then, commit the changes:
-git add themes/minimo git commit -m &amp;#34;update [theme]: minimo&amp;#34; Update Minimo submodule cd themes/minimo git checkout master git fetch &amp;amp;&amp;amp; git pull cd ../.. git add themes/minimo git commit -m &amp;#34;update [theme]: minimo&amp;#34; To Do After Updating Minimo After updating Minimo, always check that your site&amp;rsquo;s config.</description>
-    </item>
-    
-    <item>
-      <title>Installation Guide</title>
-      <link>https://namp10010.github.io/docs/installation/</link>
-      <pubDate>Mon, 25 Sep 2017 02:00:00 +0600</pubDate>
-      
-      <guid>https://namp10010.github.io/docs/installation/</guid>
-      <description>First of all you will need to setup a Hugo site. You can follow the Hugo&amp;rsquo;s Quick Start Guide for that.
-After you&amp;rsquo;re done with that, it&amp;rsquo;s time for installing Minimo!
-Installing Minimo There are two different ways you can install Minimo:
- As clone As submodule  The second method is recommended.
-Install Minimo as clone With this method, you will simply clone it. And a copy of Minimo&amp;rsquo;s repository will be stored with the rest of you site.</description>
-    </item>
-    
   </channel>
 </rss>
