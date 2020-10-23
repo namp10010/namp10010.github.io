@@ -4,12 +4,17 @@
   
   <url>
     <loc>https://namp10010.github.io/</loc>
-    <lastmod>2020-10-18T22:00:00+11:00</lastmod>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
   </url>
   
   <url>
     <loc>https://namp10010.github.io/docs/</loc>
-    <lastmod>2020-10-18T22:00:00+11:00</lastmod>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://namp10010.github.io/docs/fluent-pattern-golang/</loc>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
   </url>
   
   <url>
@@ -28,12 +33,37 @@
   
   <url>
     <loc>https://namp10010.github.io/authors/</loc>
-    <lastmod>2020-10-18T22:00:00+11:00</lastmod>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
   </url>
   
   <url>
     <loc>https://namp10010.github.io/categories/</loc>
-    <lastmod>2020-10-18T22:00:00+11:00</lastmod>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://namp10010.github.io/tags/fluent-pattern/</loc>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://namp10010.github.io/tags/golang/</loc>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://namp10010.github.io/authors/namp10010/</loc>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://namp10010.github.io/categories/programming/</loc>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://namp10010.github.io/tags/</loc>
+    <lastmod>2020-10-24T07:30:00+11:00</lastmod>
   </url>
   
   <url>
@@ -43,16 +73,6 @@
   
   <url>
     <loc>https://namp10010.github.io/tags/hugo/</loc>
-    <lastmod>2020-10-18T22:00:00+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://namp10010.github.io/authors/namp10010/</loc>
-    <lastmod>2020-10-18T22:00:00+11:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://namp10010.github.io/tags/</loc>
     <lastmod>2020-10-18T22:00:00+11:00</lastmod>
   </url>
   
