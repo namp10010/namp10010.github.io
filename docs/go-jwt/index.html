@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='A simple golang implementation of JWT JSON Web Tokens authorisation.
+This code will demo how JWT is used to authorise user and return their resource access scopes.
+For the sake of the test a new pair of keys will be generated every time and can be discarded.
+Due to the demo nature of this code, it is understood that the whole flow has been over-simplified. Generally, the architecture would be that the functionalities are broken into multiple APIs for authenticating user and authenticating JWT.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Golang JWT Authorisation • Nam Pham'>
+<meta property='og:description' content='A simple golang implementation of JWT JSON Web Tokens authorisation.
+This code will demo how JWT is used to authorise user and return their resource access scopes.
+For the sake of the test a new pair of keys will be generated every time and can be discarded.
+Due to the demo nature of this code, it is understood that the whole flow has been over-simplified. Generally, the architecture would be that the functionalities are broken into multiple APIs for authenticating user and authenticating JWT.'>
+<meta property='og:url' content='https://namp10010.github.io/docs/go-jwt/'>
+<meta property='og:site_name' content='namp10010'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://namp10010.github.io/images/go-jwt.png'><meta property='article:section' content='docs'><meta property='article:tag' content='golang'><meta property='article:tag' content='JWT'><meta property='article:tag' content='authorisation'><meta property='article:published_time' content='2021-02-14T08:00:00&#43;11:00'/><meta property='article:modified_time' content='2021-02-14T08:00:00&#43;11:00'/><meta name='twitter:card' content='summary_large_image'><meta property='twitter:image' content='https://namp10010.github.io/images/go-jwt.png'>
+
+<meta name="generator" content="Hugo 0.76.5" />
+
+  <title>Golang JWT Authorisation • Nam Pham</title>
+  <link rel='canonical' href='https://namp10010.github.io/docs/go-jwt/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-docs has-cover has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      namp10010
+      </a>
+    </h2>
+    <div class='desc'>
+    blog about software engineering, AI and random stuff
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/docs/'>Blog</a></li><li class='item'>
+  <a href='/about/'>About</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/authorisation/' style='font-size:1em'>authorisation</a>
+      </li><li>
+        <a href='/tags/fluent-pattern/' style='font-size:1em'>fluent pattern</a>
+      </li><li>
+        <a href='/tags/github-action/' style='font-size:1em'>github-action</a>
+      </li><li>
+        <a href='/tags/github-codespaces/' style='font-size:1em'>github codespaces</a>
+      </li><li>
+        <a href='/tags/golang/' style='font-size:2em'>golang</a>
+      </li><li>
+        <a href='/tags/hugo/' style='font-size:2em'>hugo</a>
+      </li><li>
+        <a href='/tags/jwt/' style='font-size:1em'>JWT</a>
+      </li></ul>
+</div>
+
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+
+</svg>
+</span>
+  <span class='close'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/docs/'>Blog</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>Home</a></li><li><a href='/docs/'>Blog</a></li><li><span>Golang JWT Authorisation</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>namp10010</p><p class='desc site-desc'>blog about software engineering, AI and random stuff</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Golang JWT Authorisation</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2021-02-14T08:00:00&#43;11:00'>2021, Feb 14</time>
+</span>
+
+  <span class='byline'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
+  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
+
+</svg>
+<span class='screen-reader-text'> by </span><a href='/authors/namp10010'>Nam Pham</a></span>
+  
+<span class='reading-time'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+
+</svg>
+3 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  <div class='entry-cover'>
+  <figure class='container cover-normal'>
+    <img src='/images/go-jwt.png'/>
+    
+  </figure>
+</div>
+  
+
+  <div class='container entry-content'>
+  <p>A simple golang implementation of JWT <a href="https://jwt.io">JSON Web Tokens</a> authorisation.</p>
+<p>This <a href="https://github.com/namp10010/go-jwt">code</a> will demo how JWT is used to authorise user and return their resource access scopes.</p>
+<p>For the sake of the test a new pair of keys will be generated every time and can be discarded.</p>
+<p>Due to the demo nature of this code, it is understood that the whole flow has been over-simplified. Generally, the architecture would be that the functionalities are broken into multiple APIs for authenticating user and authenticating JWT.</p>
+<p>Also in a real-life application the validation would involve a database and the validation of JWT would occur in a middleware with the JWT are inserted into a request context.</p>
+<h3 id="use-case">Use case</h3>
+<p>In this post we will look at a specific use case and how JWT authorisation can help. Also for the brevity, the details of JWT as well as related cryptography won&rsquo;t be discussed please consult the <a href="https://jwt.io/introduction">JSON Introduction</a> for such details.</p>
+<p>The use case is depicted in the cover diagram, at step <strong>1</strong> a user of a <em>Mobile App</em> wants to login and perform some action.</p>
+<p>The mobile app needs to <strong>2</strong> authenticate the user with the <strong>JWT Auth Server</strong> by sending it the user&rsquo;s credentials and get back the resource access scopes for that user. For example in this case the scope is whether user can have a read/write access to an API as follows</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">api:read</span>
+<span style="color:#ae81ff">api:write</span>
+</code></pre></div><p>To do this in step <strong>3</strong> the <em>JWT Auth Server</em> first needs to authenticate the user with given credentials. It then retrieves the user&rsquo;s access scopes and returned that in a JWT and signed wiht its private key (assuming RSA is used).</p>
+<p>Using the returned JWT the <em>Mobile App</em> can now make a call to the <em>API Server</em> <strong>4</strong></p>
+<p>To verify if the JWT was genuine the <em>API Server</em> calls the <em>JWT Auth Server</em> with the JWT step <strong>5</strong>.</p>
+<p>The <em>JWT Auth Server</em> authenticates the JWT using its public key, unmarshall it and return the user access scopes step <strong>6</strong>.</p>
+<p>Finally, step <strong>7</strong> after processing the request with user scopes the <em>API Server</em> return the response to the <em>Mobile App</em>.</p>
+<h3 id="the-code">The code</h3>
+<p>There are actually only two steps in the diagram namely step 3 and 5 where JWT is concerned.</p>
+<h4 id="step-3---generate-jwt">Step 3 - Generate JWT</h4>
+<p>As mentioned before, for this exercise we simply check the username for authentication. We then need to generate the JWT consisting of user&rsquo;s scopes</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang">    <span style="color:#a6e22e">jwtStr</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">createJWT</span>(<span style="color:#a6e22e">userID</span>, <span style="color:#a6e22e">scopes</span>)
+</code></pre></div><p>This function <code>createJWT</code> essentially creates a claims and sign it with a private key</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang">    <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">readJWKFile</span>(<span style="color:#a6e22e">privateKeyFile</span>)
+    <span style="color:#a6e22e">signer</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">jose</span>.<span style="color:#a6e22e">NewSigner</span>(<span style="color:#a6e22e">jose</span>.<span style="color:#a6e22e">SigningKey</span>{
+    <span style="color:#a6e22e">Algorithm</span>: <span style="color:#a6e22e">jose</span>.<span style="color:#a6e22e">SignatureAlgorithm</span>(<span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">Algorithm</span>),
+      <span style="color:#a6e22e">Key</span>:       <span style="color:#a6e22e">key</span>,
+    }, <span style="color:#66d9ef">nil</span>)
+    <span style="color:#75715e">// omitted
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">claims</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">apiAccessClaims</span>{<span style="color:#f92672">...</span>}
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">jwt</span>.<span style="color:#a6e22e">Signed</span>(<span style="color:#a6e22e">signer</span>).<span style="color:#a6e22e">Claims</span>(<span style="color:#a6e22e">claims</span>).<span style="color:#a6e22e">CompactSerialize</span>()
+</code></pre></div><h4 id="step-5---authenticate-jwt">Step 5 - Authenticate JWT</h4>
+<p>In this step, the JWT is authenticated by using the public key of the <em>JWT Auth Server</em>. This is done in function <code>authenticateJWT</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang">    <span style="color:#a6e22e">token</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">jwt</span>.<span style="color:#a6e22e">ParseSigned</span>(<span style="color:#a6e22e">jwtStr</span>)
+    <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">readJWKFile</span>(<span style="color:#a6e22e">publicKeyFile</span>)
+    <span style="color:#a6e22e">claims</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">apiAccessClaims</span>{}
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">Claims</span>(<span style="color:#a6e22e">key</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">claims</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">apiAccessClaims</span>{}, <span style="color:#a6e22e">err</span>
+    }
+</code></pre></div><p>The details of how this was implemented can be seen in the <code>&quot;gopkg.in/square/go-jose.v2/jwt&quot;</code> package code. In broad terms, the payload is hashed using the same algorithm in step 3. The hashed value is then compared with the decrypted hashed (using public key).</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>This code is self contained and simple enough to read. However, the underlying implementation is important to understand and unfortunately out of scope of this post.</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='categories'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+    <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+
+</svg>
+<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/programming/'>programming</a></div>
+<div class='tags'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/golang/'>golang</a>, <a class='tag' href='/tags/jwt/'>JWT</a>, <a class='tag' href='/tags/authorisation/'>authorisation</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/docs/fluent-pattern-golang/'>
+        <span aria-hidden='true'><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Golang fluent pattern</a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://linkedin.com/in/namp10010' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+      </li><li>
+        <a href='https://github.com/namp10010' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:githubio&#43;namp10010@gmail.com' target='_blank' rel='noopener me'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2020-2021 namp10010 </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

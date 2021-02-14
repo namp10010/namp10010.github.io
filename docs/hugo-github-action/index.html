@@ -17,7 +17,7 @@ git submodule add https://github.com/namp10010/namp10010.github.io.git public Fo
 <meta property='og:site_name' content='namp10010'>
 <meta property='og:type' content='article'><meta property='og:image' content='https://namp10010.github.io/images/hugo-github-action.png'><meta property='article:section' content='docs'><meta property='article:tag' content='github-action'><meta property='article:tag' content='hugo'><meta property='article:published_time' content='2020-10-18T10:00:00&#43;11:00'/><meta property='article:modified_time' content='2020-10-18T10:00:00&#43;11:00'/><meta name='twitter:card' content='summary_large_image'><meta property='twitter:image' content='https://namp10010.github.io/images/hugo-github-action.png'>
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.76.5" />
 
   <title>How to auto deploy Hugo contents with Github action • Nam Pham</title>
   <link rel='canonical' href='https://namp10010.github.io/docs/hugo-github-action/'>
@@ -51,7 +51,7 @@ git submodule add https://github.com/namp10010/namp10010.github.io.git public Fo
       </a>
     </h2>
     <div class='desc'>
-    random thoughts
+    blog about software engineering, AI and random stuff
     </div>
   </header>
 
@@ -72,15 +72,19 @@ git submodule add https://github.com/namp10010/namp10010.github.io.git public Fo
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/authorisation/' style='font-size:1em'>authorisation</a>
+      </li><li>
         <a href='/tags/fluent-pattern/' style='font-size:1em'>fluent pattern</a>
       </li><li>
         <a href='/tags/github-action/' style='font-size:1em'>github-action</a>
       </li><li>
         <a href='/tags/github-codespaces/' style='font-size:1em'>github codespaces</a>
       </li><li>
-        <a href='/tags/golang/' style='font-size:1em'>golang</a>
+        <a href='/tags/golang/' style='font-size:2em'>golang</a>
       </li><li>
         <a href='/tags/hugo/' style='font-size:2em'>hugo</a>
+      </li><li>
+        <a href='/tags/jwt/' style='font-size:1em'>JWT</a>
       </li></ul>
 </div>
 
@@ -146,7 +150,7 @@ git submodule add https://github.com/namp10010/namp10010.github.io.git public Fo
 
       <header id='header' class='header site-header'>
         <div class='container sep-after'>
-          <div class='header-info'><p class='site-title title'>namp10010</p><p class='desc site-desc'>random thoughts</p>
+          <div class='header-info'><p class='site-title title'>namp10010</p><p class='desc site-desc'>blog about software engineering, AI and random stuff</p>
           </div>
         </div>
       </header>
@@ -235,13 +239,13 @@ git submodule add https://github.com/namp10010/namp10010.github.io.git public Fo
 </ol>
 <p>Therefore, I opted for a custom action</p>
 <p>Define a new action in <code>.github/actions/publisher/action.yml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#34;hugo-publisher&#34;</span>
-<span style="color:#66d9ef">description</span>: <span style="color:#e6db74">&#34;build and publish hugo pages to a remote repo&#34;</span>
-<span style="color:#66d9ef">author</span>: <span style="color:#e6db74">&#34;namp10010&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;hugo-publisher&#34;</span>
+<span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;build and publish hugo pages to a remote repo&#34;</span>
+<span style="color:#f92672">author</span>: <span style="color:#e6db74">&#34;namp10010&#34;</span>
 
-<span style="color:#66d9ef">runs</span>:
-  <span style="color:#66d9ef">using</span>: <span style="color:#e6db74">&#34;docker&#34;</span>
-  <span style="color:#66d9ef">image</span>: <span style="color:#e6db74">&#34;Dockerfile&#34;</span>
+<span style="color:#f92672">runs</span>:
+  <span style="color:#f92672">using</span>: <span style="color:#e6db74">&#34;docker&#34;</span>
+  <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;Dockerfile&#34;</span>
 </code></pre></div><p>This action will be run as a docker image built from a Dockerfile in the same directory <code>.github/actions/publisher/Dockerfile</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> klakegg/hugo:0.74.3-alpine</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
@@ -286,31 +290,31 @@ git push origin main
 </code></pre></div><h4 id="github-workflow">Github Workflow</h4>
 <p>The action is ready to use now, it just needs to be added to a workflow.</p>
 <p>Create a file <code>.github/workflows/publish.yml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: publish
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">publish</span>
 
-<span style="color:#66d9ef">on</span>:
-  <span style="color:#66d9ef">push</span>:
-    <span style="color:#66d9ef">branches</span>:
-        - main
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>:
+        - <span style="color:#ae81ff">main</span>
 
-<span style="color:#66d9ef">jobs</span>:
-  <span style="color:#66d9ef">publisher</span>:
-    <span style="color:#66d9ef">name</span>: publish to github page
-    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">publisher</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">publish to github page</span>
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
 
-    <span style="color:#66d9ef">steps</span>:
+    <span style="color:#f92672">steps</span>:
     <span style="color:#75715e"># Step 1 - Checks-out your repository under $GITHUB_WORKSPACE</span>
-    - <span style="color:#66d9ef">name</span>: Check out
-      <span style="color:#66d9ef">uses</span>: actions/checkout@v2
-      <span style="color:#66d9ef">with</span>:
-        <span style="color:#66d9ef">submodules</span>: <span style="color:#66d9ef">true</span>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Check out</span>
+      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+      <span style="color:#f92672">with</span>:
+        <span style="color:#f92672">submodules</span>: <span style="color:#66d9ef">true</span>
 
     <span style="color:#75715e"># Step 2 - run hugo-publisher</span>
-    - <span style="color:#66d9ef">name</span>: Run hugo-publisher
-      <span style="color:#66d9ef">uses</span>: ./.github/actions/publisher
-      <span style="color:#66d9ef">env</span>:
-        <span style="color:#66d9ef">API_TOKEN_GITHUB</span>: ${{ secrets.API_TOKEN_GITHUB }}
-        <span style="color:#66d9ef">GITHUB_TOKEN</span>: ${{ secrets.GITHUB_TOKEN }}
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Run hugo-publisher</span>
+      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">./.github/actions/publisher</span>
+      <span style="color:#f92672">env</span>:
+        <span style="color:#f92672">API_TOKEN_GITHUB</span>: <span style="color:#ae81ff">${{ secrets.API_TOKEN_GITHUB }}</span>
+        <span style="color:#f92672">GITHUB_TOKEN</span>: <span style="color:#ae81ff">${{ secrets.GITHUB_TOKEN }}</span>
 </code></pre></div><p><strong>Important!</strong> you will need to create an personal access <code>token</code> for the github action to access the github page repo. Follow <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token">Create github access token</a> to create one for your <code>yourgithubaccount.github.io</code> repo. The only access scope the token will need is <code>repo &gt; public_repo</code>.</p>
 <p><img src="/images/hugo-github-action-token.png" alt="token&rsquo;s scope"></p>
 <p>Add the token to the repo&rsquo;s secrets with the name <code>API_TOKEN_GITHUB</code> by following <a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets">adding secrets to your github repo</a>.</p>
@@ -400,7 +404,7 @@ git push origin main
       </li></ul>
   </nav>
 </section><div class='copyright'>
-  <p> &copy; 2020 namp10010 </p>
+  <p> &copy; 2020-2021 namp10010 </p>
 </div>
 
         </div>
