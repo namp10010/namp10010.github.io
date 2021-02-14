@@ -5,7 +5,11 @@
     <link>https://namp10010.github.io/tags/github-codespaces/</link>
     <description>Recent content in github codespaces on namp10010</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 18 Oct 2020 22:00:00 +1100</lastBuildDate><atom:link href="https://namp10010.github.io/tags/github-codespaces/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Oct 2020 22:00:00 +1100</lastBuildDate>
+    
+	<atom:link href="https://namp10010.github.io/tags/github-codespaces/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Github Codespaces impression and hugo </title>
       <link>https://namp10010.github.io/docs/github-codespaces-impression/</link>

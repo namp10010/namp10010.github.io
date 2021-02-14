@@ -5,7 +5,11 @@
     <link>https://namp10010.github.io/categories/tutorial/</link>
     <description>Recent content in tutorial on namp10010</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 18 Oct 2020 10:00:00 +1100</lastBuildDate><atom:link href="https://namp10010.github.io/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Oct 2020 10:00:00 +1100</lastBuildDate>
+    
+	<atom:link href="https://namp10010.github.io/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>How to auto deploy Hugo contents with Github action</title>
       <link>https://namp10010.github.io/docs/hugo-github-action/</link>
